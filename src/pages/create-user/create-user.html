@@ -1,0 +1,61 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Suscribe</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  
+
+   <form [formGroup]="userForm" (ngSubmit)="suscribeUser()">
+
+
+        <ion-item>
+          <ion-label>mail</ion-label>
+          <ion-input formControlName="mail" type="text"></ion-input>
+          <label *ngIf="userForm.get('mail').invalid && processValidation" [ngClass] = "'error'"> mail is required. </label>
+        </ion-item>
+      <br>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+          <label *ngIf="userForm.get('password').invalid && processValidation" [ngClass] = "'error'"> password is required. </label>
+
+        </ion-item>
+      <br>
+        <ion-item>
+          <ion-label>FirstName</ion-label>
+          <ion-input formControlName="firstName" type="text"></ion-input>
+          <label *ngIf="userForm.get('firstName').invalid && processValidation" [ngClass] = "'error'"> firstName is required. </label>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>LastName</ion-label>
+          <ion-input formControlName="lastName" type="text"></ion-input>
+          <label *ngIf="userForm.get('lastName').invalid && processValidation" [ngClass] = "'error'"> lastName is required. </label>
+        </ion-item>
+ 
+    
+        <ion-item>
+          <ion-label>phone</ion-label>
+          <ion-input formControlName="phone" type="text"></ion-input>
+          <label *ngIf="userForm.get('phone').invalid && processValidation" [ngClass] = "'error'"> phone is required. </label>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>address</ion-label>
+          <ion-input formControlName="address" type="text"></ion-input>
+          <label *ngIf="userForm.get('address').invalid && processValidation" [ngClass] = "'error'"> address is required. </label>
+        </ion-item>
+    
+    <br>
+      <button ion-button full type="submit" >Suscribe</button>
+    </form> 
+    <br>
+  <button ion-button color="danger" outline   (click)="closeModal()">cancel</button>
+</ion-content>

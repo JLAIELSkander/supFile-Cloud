@@ -1,0 +1,60 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+
+
+    <form [formGroup]="UserUpdateForm" (ngSubmit)="updateUser()" class="form-horizontal, form">  
+      
+      
+        <br>
+        <ion-item>
+        <ion-label>firstName</ion-label>
+        <input formControlName="firstName" type="text" class="form-control" id="inputFirstName">
+        </ion-item>
+
+      <br>
+      <ion-item>
+          <ion-label>lastName</ion-label>
+            <input formControlName="lastName" type="text" class="form-control" id="inputLastName" placeholder="LastName">
+          </ion-item>
+
+  <br>
+  <ion-item>
+      <ion-label>mail</ion-label>
+              <input formControlName="mail" type="text" class="form-control" id="inputMail" placeholder="Mail">
+            </ion-item>
+
+  <br>
+        
+  <ion-item>
+      <ion-label>phone</ion-label>
+                <input formControlName="phone" type="text" class="form-control" id="inputPhone" placeholder="Phone">
+              </ion-item>
+
+  <br>
+  <ion-item>
+      <ion-label>password</ion-label>
+                  <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+                </ion-item>
+
+  <br>   <ion-item>
+      <ion-label>address</ion-label>
+                    <input formControlName="address" type="text" class="form-control" id="inputAddress" placeholder="Address">
+                  </ion-item>
+<br>
+               
+                <button ion-button   type="submit" full >Submit</button>
+    </form>
+  
+
+</ion-content>

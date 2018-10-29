@@ -1,0 +1,91 @@
+
+<ion-header>
+    <ion-navbar>
+      <ion-buttons start>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      </ion-buttons>
+      <ion-title>my files</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+    <ion-content>
+      <ion-list>
+              <ion-item *ngFor="let file of allFiles">
+               
+                <h2>{{file.title}}</h2>
+                <p>{{file.type}}</p>
+                <button ion-button clear item-end (click)="openModal(file)">  <ion-icon ios="ios-folder-open" md="md-folder-open"></ion-icon></button>
+                <button ion-button clear item-end  >  <ion-icon name="cloud-download"></ion-icon></button>
+                <button ion-button clear item-end  (click)="deleteFile(file.file_id)">  <ion-icon name="close"></ion-icon></button>
+              </ion-item>
+            </ion-list>
+   </ion-content>
+      
+
+   
+<!-- <ion-content>
+  
+{{surPath}}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">
+          <span (click)="goBack()" class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+      </th>
+      <th scope="col">Name</th>
+      <th scope="col">Size</th>
+      <th scope="col">Date</th>
+      <th scope="col">Type</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let file of allFiles" (dblclick)="openFolder(file)"  (onDropSuccess)="moveFile($event,file)">
+      <td></td>
+      <td>
+        <span class="glyphicon {{getIcon(file.type)}}" aria-hidden="true"></span>
+        &nbsp;
+        {{file.name}}
+      </td>
+      <td>{{file.size}} octets</td>
+      <td>{{file.date | date: 'dd/MM/yyyy'}}</td>
+      <td>{{file.type}}</td>
+      <td class="dropdown">
+        <span class="glyphicon glyphicon-option-vertical btn dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></span>
+        <ul class="dropdown-menu">
+          <li>
+            <a>
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+              &nbsp;
+              Rename
+            </a>
+          </li>
+
+          <li>
+            <a (click)="Delete(file)">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+              &nbsp;
+              Delete
+            </a>
+          </li>
+
+          <li>
+            <a (click)="downloadFile(file)">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+              &nbsp;
+              Download
+            </a>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+</ion-content>
+   -->
